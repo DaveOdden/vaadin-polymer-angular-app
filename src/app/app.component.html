@@ -18,4 +18,12 @@
   </li>
 </ul>
 
+<vaadin-tabs
+  id="tabs"
+  [selected]="selectedPage"
+  (selected-changed)="selectedPage=$event.detail.value">
+  <vaadin-tab>All Contacts</vaadin-tab>
+  <vaadin-tab>Add New</vaadin-tab>
+</vaadin-tabs>
+
 <router-outlet></router-outlet>

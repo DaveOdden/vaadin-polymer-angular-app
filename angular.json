@@ -43,7 +43,10 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {"glob": "web*.js", "input": "../node_modules/@webcomponents/webcomponentsjs", "output": "./wc_polyfills/"},
+              {"glob": "custom*.js", "input": "../node_modules/@webcomponents/webcomponentsjs", "output": "./wc_polyfills/"},
+              {"glob": "**/*", "input": "./wc_polyfills", "output": "./wc_polyfills/"}
             ],
             "styles": [
               "src/styles.scss"

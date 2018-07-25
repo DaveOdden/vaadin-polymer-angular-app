@@ -1,18 +1,20 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { PolymerModule } from '@codebakery/origami';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   imports: [
+      BrowserModule,
+      FormsModule, // Origami requires the Angular Forms module
+      PolymerModule.forRoot() // Do not call .forRoot() when importing in child modules
+   ],
+   declarations: [
+      AppComponent
+   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
