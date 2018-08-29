@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VaadinPolymerAngularApp</title>
+  <base href="/">
+
+
+  <!-- This div is needed when targeting ES5. It will add the adapter to browsers that support customElements, which require ES6 classes  -->
+  <!-- <div id="ce-es5-shim">
+    <script type="text/javascript">
+      if (!window.customElements) {
+          var ceShimContainer = document.querySelector('#ce-es5-shim');
+          ceShimContainer.parentElement.removeChild(ceShimContainer);
+      }
+    </script>
+    <script type="text/javascript" src="../node_modules/wc_polyfills/custom-elements-es5-adapter.js"></script>
+  </div> -->
+
+  <custom-style>
+    <style include="lumo-color lumo-typography">
+      html {
+        background-color: hsla(214, 57%, 24%, 0.1);
+        
+      }
+      
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .card {
+        width: 70%;
+        margin: var(--lumo-space-m);
+        padding: var(--lumo-space-m);
+        border-radius: var(--lumo-border-radius);
+        background-color: var(--lumo-base-color);
+        box-shadow: var(--lumo-box-shadow-s);
+      }
+
+      .contrast-5pct {
+      background-color: var(--lumo-contrast-5pct);
+    }
+
+    .contrast-10pct {
+      background-color: var(--lumo-contrast-10pct);
+    }
+
+    .contrast-20pct {
+      background-color: var(--lumo-contrast-20pct);
+    }
+
+    .contrast-30pct {
+      background-color: var(--lumo-contrast-30pct);
+    }
+
+    .contrast-40pct {
+      background-color: var(--lumo-contrast-40pct);
+    }
+
+    .contrast-50pct {
+      background-color: var(--lumo-contrast-50pct);
+    }
+
+    .contrast-60pct {
+      background-color: var(--lumo-contrast-60pct);
+      color: var(--lumo-base-color);
+    }
+
+    .contrast-70pct {
+      background-color: var(--lumo-contrast-70pct);
+      color: var(--lumo-base-color);
+    }
+
+    .contrast-80pct {
+      background-color: var(--lumo-contrast-80pct);
+      color: var(--lumo-base-color);
+    }
+
+    .contrast-90pct {
+      background-color: var(--lumo-contrast-90pct);
+      color: var(--lumo-base-color);
+    }
+
+    .contrast {
+      background-color: var(--lumo-contrast);
+      color: var(--lumo-base-color);
+    }
+
+    </style>
+
+  </custom-style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="./assets/webcomponents-loader.js"></script>
+  <script src="./assets/web-animations-next.min.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

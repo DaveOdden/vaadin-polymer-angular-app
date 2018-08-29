@@ -1,0 +1,56 @@
+<div style="margin: 2rem; display: flex; justify-content: flex-start; align-items: flex-start">
+	<div style="">
+	<vaadin-context-menu>
+		<template>
+			<vaadin-list-box>
+				<vaadin-item>Edit</vaadin-item>
+				<vaadin-item disabled>Refresh</vaadin-item>
+			</vaadin-list-box>
+		</template>
+
+		<vaadin-item class="card-no-padding shadow-m" style="max-width:15rem">
+			<div class="space-m">
+				Amazon Stock
+				<span theme="badge contrast pill small" class="">12 Shares</span>     
+				<hr>
+
+				<div *ngIf="loadingStocks" style="margin: 1rem;">
+					<paper-spinner active class="thin"></paper-spinner>
+				</div>
+
+				<div *ngIf="!loadingStocks">
+					<h2 style="margin: 0; color: #15c15d">${{netGainsString}}</h2>
+					<small *ngIf="isMarketOpen()" class="secondary-text">Current Price: ${{endStockValString}}</small>
+					<small *ngIf="!isMarketOpen()" class="secondary-text">Close Price: ${{endStockValString}}</small>
+				</div>
+			</div>
+
+			<div class="contrast-5pct space-xs">
+				<p *ngIf="isMarketOpen()" style="font-size: .6375rem; padding-top: .12rem; line-height: 0; vertical-align: middle" class="secondary-text">Last Sync: {{lastReload}}</p>
+				<p *ngIf="!isMarketOpen()" style="font-size: .6375rem; padding-top: .12rem; line-height: 0; vertical-align: middle" class="secondary-text">Market Closed</p>
+			</div>
+		</vaadin-item>
+	</vaadin-context-menu>
+	</div>
+	
+	<div>
+	<vaadin-context-menu>
+		<template>
+			<vaadin-list-box>
+				<vaadin-item>Edit</vaadin-item>
+				<vaadin-item disabled>Refresh</vaadin-item>
+			</vaadin-list-box>
+		</template>
+
+		<vaadin-item class="card-no-padding shadow-m" style="max-width:15rem">
+			<div class="space-m">
+				'79 Ford F100        
+				<hr>
+
+				<h2 style="margin: 0; color: #15c15d">${{ this.numberWithCommas( 5000 - 1825.61 ) }}</h2>
+				<small class="secondary-text">Invested: ${{ this.numberWithCommas( 1825.61 ) }}</small>
+			</div>
+		</vaadin-item>
+	</vaadin-context-menu>
+	</div>
+</div>

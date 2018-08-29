@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VaadinPolymerAngularApp</title>
+  <base href="/">
+
+
+  <!-- This div is needed when targeting ES5. It will add the adapter to browsers that support customElements, which require ES6 classes  -->
+  <!-- <div id="ce-es5-shim">
+    <script type="text/javascript">
+      if (!window.customElements) {
+          var ceShimContainer = document.querySelector('#ce-es5-shim');
+          ceShimContainer.parentElement.removeChild(ceShimContainer);
+      }
+    </script>
+    <script type="text/javascript" src="../node_modules/wc_polyfills/custom-elements-es5-adapter.js"></script>
+  </div> -->
+
+  <custom-style>
+    <style include="lumo-color lumo-typography">
+      html {
+        background-color: hsla(214, 57%, 24%, 0.1);
+        --lumo-icons-angle-down: "\ea01";
+      --lumo-icons-angle-left: "\ea02";
+      --lumo-icons-angle-right: "\ea03";
+      --lumo-icons-angle-up: "\ea04";
+      --lumo-icons-arrow-down: "\ea05";
+      --lumo-icons-arrow-left: "\ea06";
+      --lumo-icons-arrow-right: "\ea07";
+      --lumo-icons-arrow-up: "\ea08";
+      --lumo-icons-bar-chart: "\ea09";
+      --lumo-icons-bell: "\ea0a";
+      --lumo-icons-calendar: "\ea0b";
+      --lumo-icons-checkmark: "\ea0c";
+      --lumo-icons-chevron-down: "\ea0d";
+      --lumo-icons-chevron-left: "\ea0e";
+      --lumo-icons-chevron-right: "\ea0f";
+      --lumo-icons-chevron-up: "\ea10";
+      --lumo-icons-clock: "\ea11";
+      --lumo-icons-cog: "\ea12";
+      --lumo-icons-cross: "\ea13";
+      --lumo-icons-download: "\ea14";
+      --lumo-icons-dropdown: "\ea15";
+      --lumo-icons-edit: "\ea16";
+      --lumo-icons-error: "\ea17";
+      --lumo-icons-eye: "\ea18";
+      --lumo-icons-eye-disabled: "\ea19";
+      --lumo-icons-menu: "\ea1a";
+      --lumo-icons-minus: "\ea1b";
+      --lumo-icons-phone: "\ea1c";
+      --lumo-icons-play: "\ea1d";
+      --lumo-icons-plus: "\ea1e";
+      --lumo-icons-reload: "\ea1f";
+      --lumo-icons-search: "\ea20";
+      --lumo-icons-upload: "\ea21";
+      --lumo-icons-user: "\ea22";
+    
+      }
+      
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .card {
+        width: 70%;
+        margin: var(--lumo-space-m);
+        padding: var(--lumo-space-m);
+        border-radius: var(--lumo-border-radius);
+        background-color: var(--lumo-base-color);
+        box-shadow: var(--lumo-box-shadow-s);
+      }
+
+    </style>
+  </custom-style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="./assets/webcomponents-loader.js"></script>
+  <script src="./assets/web-animations-next.min.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
