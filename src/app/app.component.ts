@@ -15,6 +15,7 @@ import '@polymer/paper-spinner/paper-spinner';
       id="tabs"
       style="background-color: white; padding: 1rem 1rem 0 1rem">
       <vaadin-tab routerLink="/dashboard">Dashboard</vaadin-tab>
+      <vaadin-tab routerLink="/purchases">Purchases</vaadin-tab>
       <vaadin-tab routerLink="/wealth">Wealth</vaadin-tab>
       <vaadin-tab routerLink="/notes">Notes</vaadin-tab>
     </vaadin-tabs>

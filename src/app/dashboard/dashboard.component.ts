@@ -2,20 +2,30 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'rxjs/Rx';import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { SpotifyAPIService } from '../spotify.service';
+import { HerokuAPI } from '../heroku.service';
 
 @Component({
   selector: 'dashboard-component',
-  template: `<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWZeKCadgRdKQ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  dbData: any;
   
-  constructor( public router: Router, public spotifyAPI: SpotifyAPIService ) {
-    this.spotifyAPI.login().subscribe( ( res ) => {
-      console.log(res);
-    });
+  constructor( public router: Router, public spotifyAPI: SpotifyAPIService, public herokuAPI: HerokuAPI ) {
+    // this.spotifyAPI.login().subscribe( ( res ) => {
+    //   console.log(res);
+    // });
   }
 
   ngOnInit() {
-    console.log('crank box');
+    this.herokuAPI.getRecords().subscribe( this.prepareDataForUI.bind(this) )
+    //this.herokuAPI.deleteRecord()
+  }
+
+  prepareDataForUI( apiData ) {
+    console.log(apiData);
+    this.dbData = apiData;
   }
 }

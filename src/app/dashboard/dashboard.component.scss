@@ -1,0 +1,10 @@
+:host {
+	margin: 0;
+	padding: 0;
+	height: calc(100% - 94px); // minus header
+	background-color: white;
+}
+
+:host vaadin-split-layout {
+	height: 100%;
+}

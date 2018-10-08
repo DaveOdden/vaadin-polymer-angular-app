@@ -1,0 +1,36 @@
+<vaadin-split-layout>
+  <section class="ui-list-container">
+    <header class="ui-list-header">
+      <h2>Listings</h2>
+      <div>
+        <vaadin-text-field class="search-input" placeholder="Search" theme="small">
+          <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
+        </vaadin-text-field>
+        <vaadin-button class="add-new-interview-entry" theme="primary small">New</vaadin-button>
+      </div>
+    </header>
+    <ul class="ui-list">
+      <li *ngFor="let interview of dbData" class="" [routerLink]="['/details', interview._id]">
+        <h3 class="recruiter-name">{{ interview.recruiter }}</h3>
+        <small class="employer-name">{{ interview.employer }}</small>
+        <small>{{ interview._id }}</small>
+      </li>
+    </ul>
+  </section>
+
+  
+  <!-- NEW FORM -->
+  <div>
+    <!-- <h2>New Recruiter</h2>
+    <vaadin-form-layout class="with-text-fields">
+      <vaadin-text-field label="Recruiter" placeholder="e.g. Gomer Pyle"></vaadin-text-field>
+      <vaadin-text-field width="20%" label="Company" placeholder="e.g. Dollar Tree"></vaadin-text-field>
+      <vaadin-date-picker label="First Contact" placeholder="Pick a date"></vaadin-date-picker>
+      <vaadin-date-picker label="Last Contact" placeholder="Pick a date"></vaadin-date-picker>
+      <vaadin-button>Create New Recruiter</vaadin-button>
+    </vaadin-form-layout> -->
+    <router-outlet name="detailview"></router-outlet>
+
+  </div>
+
+</vaadin-split-layout>

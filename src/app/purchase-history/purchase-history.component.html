@@ -1,0 +1,57 @@
+
+<div class="component-container ui-card-no-padding">
+  <vaadin-split-layout class="ui-full-width-height">
+    
+    <section class="ui-list-container">
+      
+      <!-- List Heading -->
+      <div class="space-m" style="border-bottom: 1px solid #eee;">
+        <div class="ui-list-heading">
+          <h3 class="ui-heading-label">Purchase Groups</h3>
+          <div>
+            <button class="circular-plus-button"><span>+</span></button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- List of Purchase Groups -->
+      <ul class="ui-list" *ngIf="!loadingData">
+        <li *ngFor="let purchaseGroup of dbData | filterBy: listFilter"
+            class=""
+            [class.selected]="purchaseGroup === selectedGroup"
+            (click)="onSelect(purchaseGroup)">
+          <h3 class="recruiter-name">{{ purchaseGroup.name }}</h3>
+          <small class="employer-name">{{ purchaseGroup.description }}</small>
+        </li>
+      </ul>
+
+      <!-- LOADING INDICATOR -->
+      <div *ngIf="loadingData" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: rgba(255,255,255,.7)">
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+          <paper-spinner active class="thin"></paper-spinner>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- DETAIL VIEW -->
+    <div style="width: 40rem;">
+      <!--
+      <vaadin-form-layout class="with-text-fields space-l">
+      <h3>New Group</h3>
+        <vaadin-text-field label="Purchase Parent Group" placeholder="Playstation"></vaadin-text-field>
+        <vaadin-text-field label="Description" placeholder="new consoles, games, services, etc."></vaadin-text-field>
+        <vaadin-text-field label="Sub Groups"></vaadin-text-field>
+        <vaadin-button>Submit New Group</vaadin-button>
+      </vaadin-form-layout>
+      -->
+
+      <app-purchase-history-detail [purchase]="selectedGroup"></app-purchase-history-detail>
+
+    </div>
+
+
+
+  </vaadin-split-layout>
+</div>

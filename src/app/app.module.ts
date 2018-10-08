@@ -17,9 +17,16 @@ import {
   NG_GAPI_CONFIG,
   GoogleApiConfig
 } from "ng-gapi";
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { UserService } from './user.service';
 import { SheetResource } from './SheetsResource';
 import { SpotifyAPIService } from './spotify.service';
+import { InterviewsDetailComponent } from './interviews-detail/interviews-detail.component';
+import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { PurchaseHistoryDetailComponent } from './purchase-history-detail/purchase-history-detail.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "655855026823-n01ko5eu7ua0jch7nk2npsvavjks24bl.apps.googleusercontent.com",
@@ -34,23 +41,28 @@ let gapiClientConfig: NgGapiClientConfig = {
 };
 
 @NgModule({
-   imports: [
-      BrowserModule,
-      FormsModule, // Origami requires the Angular Forms module
-      PolymerModule.forRoot(), // Do not call .forRoot() when importing in child modules
-      HttpModule,
-      HttpClientModule,
-      AppRoutingModule,
-      GoogleApiModule.forRoot({
-        provide: NG_GAPI_CONFIG,
-        useValue: gapiClientConfig
-      }),
-   ],
+  imports: [
+    NgbModule,
+    FilterPipeModule,
+    BrowserModule,
+    FormsModule, // Origami requires the Angular Forms module
+    PolymerModule.forRoot(), // Do not call .forRoot() when importing in child modules
+    HttpModule,
+    HttpClientModule,
+    AppRoutingModule,
+    GoogleApiModule.forRoot({
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig
+    } ),
+  ],
   declarations: [
     AppComponent,
     DashboardComponent,
     WealthComponent,
-    NotesComponent
+    NotesComponent,
+    InterviewsDetailComponent,
+    PurchaseHistoryComponent,
+    PurchaseHistoryDetailComponent
   ],
   providers: [
     UserService,
